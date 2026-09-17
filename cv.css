@@ -1,0 +1,272 @@
+/* زر الطباعة والتنزيل */
+.cv-actions {
+  display: flex;
+  justify-content: center;
+  margin: 30px auto 10px;
+}
+
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #0284c7;
+  color: #fff;
+  padding: 12px 26px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-download:hover {
+  background-color: #0369a1;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(2, 132, 199, 0.3);
+}
+
+/* ورقة السيرة الذاتية (Paper Style) */
+.cv-paper {
+  max-width: 950px;
+  margin: 20px auto 60px;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 16px;
+  padding: 50px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* الترويسة */
+.cv-header {
+  border-bottom: 2px solid #334155;
+  padding-bottom: 25px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.cv-title-block h1 {
+  font-size: 2.3rem;
+  color: #f8fafc;
+  margin-bottom: 6px;
+}
+
+.cv-role {
+  font-size: 1.15rem;
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+.cv-contact-info {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.cv-contact-info a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.cv-contact-info a:hover {
+  color: #38bdf8;
+}
+
+/* تقسيم المحتوى (Two Columns) */
+.cv-body-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 40px;
+}
+
+/* العناوين والكتل */
+.cv-block {
+  margin-bottom: 30px;
+}
+
+.cv-section-title {
+  font-size: 1.25rem;
+  color: #38bdf8;
+  border-bottom: 1px solid #334155;
+  padding-bottom: 8px;
+  margin-bottom: 18px;
+  letter-spacing: -0.3px;
+}
+
+.cv-skill-group {
+  margin-bottom: 14px;
+}
+
+.cv-skill-group h3 {
+  font-size: 0.95rem;
+  color: #e2e8f0;
+  margin-bottom: 4px;
+}
+
+.cv-skill-group p {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+.cv-entry {
+  margin-bottom: 20px;
+}
+
+.cv-entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cv-entry-head h3 {
+  font-size: 1.1rem;
+  color: #f1f5f9;
+}
+
+.cv-date {
+  font-size: 0.82rem;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.cv-institution {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.cv-tech-stack {
+  font-size: 0.85rem;
+  color: #38bdf8;
+  margin-bottom: 8px;
+  font-family: monospace;
+}
+
+.cv-desc {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.cv-bullets {
+  padding-right: 18px;
+  margin-top: 6px;
+}
+
+.cv-bullets li {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.cv-list {
+  list-style: none;
+}
+
+.cv-list li {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  margin-bottom: 8px;
+}
+
+/* ==========================================================================
+   إعدادات الطباعة وتحويل الصفحة لـ PDF نظيف (Print Stylesheet)
+   ========================================================================== */
+@media print {
+  /* إخفاء شريط التنقل والأزرار والفوتر عند الطباعة */
+  .no-print,
+  .navbar,
+  footer {
+    display: none !important;
+  }
+
+  body {
+    background-color: #ffffff !important;
+    color: #111827 !important;
+    font-size: 11pt;
+  }
+
+  .cv-paper {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    background: transparent !important;
+  }
+
+  .cv-title-block h1 {
+    color: #0f172a !important;
+  }
+
+  .cv-role {
+    color: #0284c7 !important;
+  }
+
+  .cv-contact-info,
+  .cv-contact-info a {
+    color: #475569 !important;
+  }
+
+  .cv-section-title {
+    color: #0284c7 !important;
+    border-bottom: 1px solid #cbd5e1 !important;
+  }
+
+  .cv-skill-group h3,
+  .cv-entry-head h3 {
+    color: #0f172a !important;
+  }
+
+  .cv-skill-group p,
+  .cv-institution,
+  .cv-desc,
+  .cv-bullets li,
+  .cv-list li {
+    color: #334155 !important;
+  }
+
+  .cv-date {
+    background: #f1f5f9 !important;
+    color: #0284c7 !important;
+    border: 1px solid #cbd5e1;
+  }
+
+  .cv-header {
+    border-bottom: 2px solid #cbd5e1 !important;
+  }
+}
+
+/* التجاوب مع الجوال */
+@media (max-width: 768px) {
+  .cv-paper {
+    padding: 25px 20px;
+  }
+
+  .cv-body-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .cv-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
